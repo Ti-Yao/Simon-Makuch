@@ -54,6 +54,18 @@ survival_table = create_survival_event_table(df, 'patient_col', 'stop_death', 's
 # Plot Simon-Makuch survival curves
 plot_simon_makuch(survival_table)
 ```
+## Example Event Table
+
+| time  | Cluster 1         | Cluster 2         | Cluster 3         | Cluster 4         | Cluster 5         |
+|-------|------------------|------------------|------------------|------------------|------------------|
+|       | n_patients | n_deaths | n_patients | n_deaths | n_patients | n_deaths | n_patients | n_deaths | n_patients | n_deaths |
+| 0.0   | 465        | 0        | 402        | 0        | 329        | 0        | 171        | 0        | 213        | 0        |
+| 28.0  | 465        | 0        | 402        | 0        | 329        | 0        | 171        | 0        | 213        | 0        |
+| 30.0  | 461        | 0        | 401        | 0        | 329        | 0        | 171        | 0        | 213        | 0        |
+| 31.0  | 456        | 1        | 395        | 0        | 328        | 0        | 167        | 0        | 213        | 0        |
+| 59.0  | 451        | 0        | 387        | 0        | 324        | 0        | 165        | 0        | 208        | 0        |
+
+
 
 ## License
 This project is open-source and free to use. Modify and distribute as needed.
