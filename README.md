@@ -17,7 +17,7 @@ pip install numpy pandas matplotlib
 ### 1. Create a Survival Event Table
 ```python
 survival_table = create_survival_event_table(
-    df, 'force_id', 'stop_death_transplant', 'status_death_transplant_varying', 'cluster'
+    df, 'patient_col', 'stop_death', 'status_death', 'cluster'
 )
 ```
 #### Parameters:
@@ -25,7 +25,7 @@ survival_table = create_survival_event_table(
 - `patient_col` : Column name for patient IDs.
 - `stop_col` : Column for event time (death/transplant/censoring).
 - `status_col` : Column for event status (1 = event, 0 = censored).
-- `cluster_col` : Column indicating patient clusters.
+- `cluster_col` : Column indicating patient clusters. This can be changed to any time varying covariate
 
 #### Returns:
 A **Pandas DataFrame** where each row represents a time point with the number of patients at risk and the number of deaths for each cluster.
@@ -33,7 +33,7 @@ A **Pandas DataFrame** where each row represents a time point with the number of
 ---
 ### 2. Plot Simon-Makuch Survival Curves
 ```python
-plot_simon_makuch(survival_table, ordered_colors=['blue', 'green', 'red'])
+plot_simon_makuch(survival_table, ordered_colors)
 ```
 #### Parameters:
 - `survival_table` : Output from `create_survival_event_table`.
@@ -49,7 +49,7 @@ from your_script import create_survival_event_table, plot_simon_makuch
 df = pd.read_csv('your_data.csv')
 
 # Generate survival event table
-survival_table = create_survival_event_table(df, 'force_id', 'stop_death_transplant', 'status_death_transplant_varying', 'cluster')
+survival_table = create_survival_event_table(df, 'patient_col', 'stop_death', 'status_death', 'cluster')
 
 # Plot Simon-Makuch survival curves
 plot_simon_makuch(survival_table)
