@@ -137,7 +137,7 @@ def plot_simon_makuch(survival_table, ordered_colors = None):
     plt.ylim(y_min,1)
     
     # Customize plot
-    plt.title("Simon-Makuch Plot")
+    plt.title("Simon-Makuch Plot", fontsize = 20)
     plt.xlabel("Time (Days)", fontsize=16)
     plt.ylabel("Survival Probability", fontsize=16)
     plt.legend(loc='lower left', labels=labels, framealpha=0, fontsize=12)
